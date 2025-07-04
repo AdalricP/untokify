@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Untokify",
+  "version": "1.0",
+  "description": "Untiktokifies Twitter (x.com) by blocking video and image spam, with adjustable intensity.",
+  "permissions": ["scripting", "storage"],
+  "host_permissions": [
+    "https://x.com/*",
+    "https://www.x.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*",
+        "https://www.x.com/*"
+      ],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Untokify Settings"
+  }
+} 
